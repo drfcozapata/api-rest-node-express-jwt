@@ -1,5 +1,7 @@
 import express, { Application } from 'express';
-import connection from '../db/connection';
+import routesProduct from '../routes/product.routes';
+import routesDefault from '../routes/default.routes';
+import routesUser from '../routes/user.routes';
 
 class Server {
 	private app: Application;
@@ -9,7 +11,8 @@ class Server {
 		this.app = express();
 		this.port = process.env.PORT || '3000';
 		this.listen();
-		this.connectDB();
+		this.middlewares();
+		this.routes();
 	}
 
 	listen() {
@@ -18,14 +21,13 @@ class Server {
 		});
 	}
 
-	connectDB() {
-		connection.connect(err => {
-			if (err) {
-				console.log('Error:', err);
-			} else {
-				console.log('DB successfully connected');
-			}
-		});
+	routes() {
+		this.app.use('/', routesDefault);
+		this.app.use('/api/v1', [routesProduct, routesUser]);
+	}
+
+	middlewares() {
+		this.app.use(express.json());
 	}
 }
 

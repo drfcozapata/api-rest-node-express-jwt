@@ -10,4 +10,12 @@ const connection = mysql_1.default.createConnection({
     password: '1301',
     database: 'restaurant',
 });
+connection.connect(err => {
+    if (err) {
+        console.error('Error connecting to the database:', err);
+    }
+    else {
+        console.log('Connected to the database');
+    }
+});
 exports.default = connection;
