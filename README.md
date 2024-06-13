@@ -1,6 +1,6 @@
 # API Rest con Node.js, Express, TypeScript, JWT y MySQL
 
-Este proyecto es una API Rest que utiliza Node.js, Express, TypeScript, JWT y MySQL para la creación de endpoints para hacer registro y login de usuarios y tiene una tabla ejemplo de productos que permite practicar el uso de JWT para la autenticación de usuarios.
+Este proyecto es una API Rest desarrollada usando Node.js, Express, TypeScript, JWT y MySQL para la creación de endpoints para hacer registro y login de usuarios y tiene una tabla ejemplo de productos que permite practicar el uso de JWT para la autenticación de usuarios.
 
 ## Project Setup
 
@@ -22,3 +22,5 @@ La primera mantiene nodemon activo para el seguimiento y control de cambios en l
 ```sh
 Folder 'dist' content
 ```
+
+<img src="./src/api-rest-node.png"/>
